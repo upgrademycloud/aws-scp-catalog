@@ -15,7 +15,7 @@ A reusable OpenTofu (Terraform) configuration for managing AWS Organizations Ser
 ## Pre-requisites
 
 - [AWS CLI](https://aws.amazon.com/cli/) configured with appropriate permissions
-- [OpenTofu](https://opentofu.io/) installed
+- [OpenTofu](https://opentofu.org/) installed
 - [Taskfile](https://taskfile.dev/) installed (optional, for easier command management)
 
 ## Pre-existing Organization Structure
