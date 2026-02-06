@@ -40,7 +40,7 @@ organization_root_id = "r-xxxx"                                 # Replace with y
 ```
 
 > [!TIP]
-> Use the [Remote State](https://github.com/upgrademycloud/remote-state) module to set up your S3 bucket for storing the statefile and ensuring versioning, server-side encryption, and proper access controls are in place.
+> Use the [Remote State](https://github.com/upgrademycloud/aws-remote-state) module to set up your S3 bucket for storing the statefile and ensuring versioning, server-side encryption, and proper access controls are in place.
 
 ### 2. Enabling SCPs
 
