@@ -20,7 +20,7 @@ A reusable OpenTofu (Terraform) configuration for managing AWS Organizations Ser
 
 ## Pre-existing Organization Structure
 
-If you already have an AWS Organization that you want to manage using this module, you can import the exisitng organization. This will allow the module to enable the Service Control Policy (SCP) feature to be enabled.
+If you already have an AWS Organization that you want to manage using this module, you can import the exisitng organization. This will allow the module to enable the Service Control Policy (SCP) feature.
 
 ```bash
 task run cmd=import -- aws_organizations_organization.this $(aws organizations describe-organization --query 'Organization.Id' --output text)
