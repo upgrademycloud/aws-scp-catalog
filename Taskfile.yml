@@ -1,0 +1,35 @@
+version: "3"
+
+env:
+  ENV: organization
+  CONFIG_PATH: ./config
+
+tasks:
+  init:
+    cmds:
+      - tofu init -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars" -reconfigure
+    internal: true
+
+  plan:
+    deps: [init]
+    cmds:
+      - tofu plan -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars"
+
+  apply:
+    deps: [init]
+    cmds:
+      - tofu apply -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars"
+
+  destroy:
+    deps: [init]
+    cmds:
+      - tofu destroy -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars"
+
+  run:
+    desc: Run custom tofu commands (e.g., task run cmd=import -- aws_organizations_organization.this o-xxxxx)
+    deps: [init]
+    cmds:
+      - tofu {{.cmd}} -var-file="{{.CONFIG_PATH}}/{{.ENV}}.tfvars" {{.CLI_ARGS}}
+    requires:
+      vars:
+        - cmd
